@@ -84,3 +84,4 @@ docs/demo_guide/*.bag
 
 # Logs
 cyber/log/*
+.DS_Store
