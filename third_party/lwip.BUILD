@@ -1,13 +1,17 @@
 package(default_visibility = ["//visibility:public"])
 
-cc_library(
+cc_import(
     name = "lwip-lib",
-    srcs = [
-    ],
+    static_library = "liblwip.a",
+)
+
+cc_library(
+    name = "lwip",
     hdrs = glob([
-        "src/include/**/*.h",
+        "include/**/*.h",
     ]),
-    strip_include_prefix = "src/include",
-    linkopts = [
+    strip_include_prefix= "include",
+    deps = [
+        ":lwip-lib" ,
     ],
 )

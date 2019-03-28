@@ -17,6 +17,8 @@ cc_binary(
     name = "lwip",
     srcs = [
         "lwip.cpp",
-        ""
-    ]
+    ],
+    deps = [
+        "@lwip//:lwip"
+    ],
 )
