@@ -38,11 +38,11 @@ set(LWIP_SOURCES
     ${LWIP_PATH}/src/core/ipv6/icmp6.c
     ${LWIP_PATH}/src/core/ipv6/ip6_addr.c
     ${LWIP_PATH}/src/core/ipv6/ip6_frag.c
-    ${LWIP_PATH}/lwip/src/api/api_lib.c
-    ${LWIP_PATH}/lwip/src/api/api_msg.c
-    ${LWIP_PATH}/lwip/src/api/err.c
-    ${LWIP_PATH}/lwip/src/api/netdb.c
-    ${LWIP_PATH}/lwip/src/api/tcpip.c
+    ${LWIP_PATH}/src/api/api_lib.c
+    ${LWIP_PATH}/src/api/api_msg.c
+    ${LWIP_PATH}/src/api/err.c
+    ${LWIP_PATH}/src/api/netdb.c
+    ${LWIP_PATH}/src/api/tcpip.c
 )
 
 set(CONTRIB_SOURCES
@@ -50,4 +50,6 @@ set(CONTRIB_SOURCES
     ${CONTRIB_PATH}/ports/unix/port/sys_arch.c
     ${CONTRIB_PATH}/ports/unix/port/netif/list.c
 )
-add_library (lwip ${DIR_LIB_SRCS} ${CONTRIB_SOURCES} )
+add_library (lwip STATIC
+        ${LWIP_SOURCES}
+        ${CONTRIB_SOURCES} )

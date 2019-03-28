@@ -13,6 +13,13 @@
 
 int main(int argc, char **argv)
 {
+    ip_addr_t ip, netmask, gw;
+    netif interface;
+
+    memset(&interface, 0, sizeof(netif));
+
+    lwip_init();
+
     std::cout<< "hihi" << std::endl;
 
     return (0);
