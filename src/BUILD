@@ -13,3 +13,10 @@ cc_binary(
         "old.cpp",
     ],
 )
+cc_binary(
+    name = "lwip",
+    srcs = [
+        "lwip.cpp",
+        ""
+    ]
+)

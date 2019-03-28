@@ -8,7 +8,6 @@ bazel-testlogs
 /Debug/
 *.pyc
 *genrule.log
-WORKSPACE
 # temporary files
 *.swp
 *.swo
@@ -85,3 +84,5 @@ docs/demo_guide/*.bag
 # Logs
 cyber/log/*
 .DS_Store
+
+/out
