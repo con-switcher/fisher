@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include <cstring>
 
 #include "lwip/opt.h"
 #include "lwip/debug.h"
