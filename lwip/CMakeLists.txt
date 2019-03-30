@@ -1,13 +1,15 @@
 cmake_minimum_required(VERSION 3.0)
 project (lwip)
 
-set(LWIP_DIR "lwip-1.4.1")
-set(CONTRIB_DIR "contrib-1.4.1")
+set(LWIP_DIR "lwip")
+set(CONTRIB_DIR "contrib")
 
 
 
 include_directories(
     ${LWIP_DIR}/src/include
+    ${LWIP_DIR}/src/include/ipv4
+    ${LWIP_DIR}/src/include/ipv6
     ${CONTRIB_DIR}/ports/unix/include
     custom
 )
@@ -44,11 +46,11 @@ set(lwipapi_SRCS
 )
 
 set(CONTRIB_SOURCES
-        ${CONTRIB_PATH}/ports/unix/lwip_chksum.c
-        ${CONTRIB_PATH}/ports/unix/perf.c
-        ${CONTRIB_PATH}/ports/unix/sys_arch.c
-        ${CONTRIB_PATH}/ports/unix/netif/list.c
-        ${CONTRIB_PATH}/ports/unix/netif/tcpdump.c
+        ${CONTRIB_DIR}/ports/unix/lwip_chksum.c
+        ${CONTRIB_DIR}/ports/unix/perf.c
+        ${CONTRIB_DIR}/ports/unix/sys_arch.c
+        ${CONTRIB_DIR}/ports/unix/netif/list.c
+        ${CONTRIB_DIR}/ports/unix/netif/tcpdump.c
 )
 add_library (lwip STATIC
         ${lwipcore_SRCS} ${lwipcore4_SRCS} ${lwipapi_SRCS}
