@@ -88,3 +88,4 @@ cyber/log/*
 /out
 /node_modules
 /cmake-build-debug
+/temp

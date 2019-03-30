@@ -15,6 +15,7 @@ include_directories(
 # lwip文件
 set(LWIP_SOURCES
     ${LWIP_PATH}/src/core/def.c
+    ${LWIP_PATH}/src/core/dns.c
     ${LWIP_PATH}/src/core/inet_chksum.c
     ${LWIP_PATH}/src/core/init.c
     ${LWIP_PATH}/src/core/mem.c
@@ -33,11 +34,11 @@ set(LWIP_SOURCES
     ${LWIP_PATH}/src/core/ipv4/ip4.c
     ${LWIP_PATH}/src/core/ipv4/ip4_addr.c
     ${LWIP_PATH}/src/core/ipv4/ip4_frag.c
-    ${LWIP_PATH}/src/core/ipv6/ip6.c
-    ${LWIP_PATH}/src/core/ipv6/nd6.c
-    ${LWIP_PATH}/src/core/ipv6/icmp6.c
-    ${LWIP_PATH}/src/core/ipv6/ip6_addr.c
-    ${LWIP_PATH}/src/core/ipv6/ip6_frag.c
+#    ${LWIP_PATH}/src/core/ipv6/ip6.c
+#    ${LWIP_PATH}/src/core/ipv6/nd6.c
+#    ${LWIP_PATH}/src/core/ipv6/icmp6.c
+#    ${LWIP_PATH}/src/core/ipv6/ip6_addr.c
+#    ${LWIP_PATH}/src/core/ipv6/ip6_frag.c
     ${LWIP_PATH}/src/api/api_lib.c
     ${LWIP_PATH}/src/api/api_msg.c
     ${LWIP_PATH}/src/api/err.c

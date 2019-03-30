@@ -241,4 +241,8 @@ extern unsigned char debug_flags;
 /* ---------- PPP options ---------- */
 #define PPP_SUPPORT             0
 
+/* ---------- IP options ---------- */
+#define LWIP_IPV4             1
+#define LWIP_IPV6             0
+
 #endif /* __LWIPOPTS_H__ */
