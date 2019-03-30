@@ -22,3 +22,14 @@ cc_binary(
         "@lwip//:lwip"
     ],
 )
+
+cc_binary(
+    name = "share",
+    srcs = [
+        "share.c",
+        "share.h",
+        "share-main.c",
+    ],
+    deps = [
+    ],
+)

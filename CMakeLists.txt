@@ -14,6 +14,6 @@ set(LWIP_SOURCES
         )
 
 add_executable(lwip ${LWIP_SOURCES})
-target_link_libraries(lwip liblwip.a pthread)
+target_link_libraries(lwip lwip.a pthread)
 
 

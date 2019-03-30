@@ -1,56 +1,55 @@
 cmake_minimum_required(VERSION 3.0)
 project (lwip)
 
-set(LWIP_PATH "lwip-2.1.2")
-set(CONTRIB_PATH "contrib-2.1.0")
+set(LWIP_DIR "lwip-1.4.1")
+set(CONTRIB_DIR "contrib-1.4.1")
 
 
 
 include_directories(
-    ${LWIP_PATH}/src/include 
-    ${CONTRIB_PATH}/ports/unix/port/include
+    ${LWIP_DIR}/src/include
+    ${CONTRIB_DIR}/ports/unix/include
     custom
 )
 
-# lwip文件
-set(LWIP_SOURCES
-    ${LWIP_PATH}/src/core/def.c
-    ${LWIP_PATH}/src/core/dns.c
-    ${LWIP_PATH}/src/core/inet_chksum.c
-    ${LWIP_PATH}/src/core/init.c
-    ${LWIP_PATH}/src/core/mem.c
-    ${LWIP_PATH}/src/core/memp.c
-    ${LWIP_PATH}/src/core/netif.c
-    ${LWIP_PATH}/src/core/pbuf.c
-    ${LWIP_PATH}/src/core/stats.c
-    ${LWIP_PATH}/src/core/sys.c
-    ${LWIP_PATH}/src/core/tcp.c
-    ${LWIP_PATH}/src/core/tcp_in.c
-    ${LWIP_PATH}/src/core/tcp_out.c
-    ${LWIP_PATH}/src/core/timeouts.c
-    ${LWIP_PATH}/src/core/udp.c
-    ${LWIP_PATH}/src/core/ip.c
-    ${LWIP_PATH}/src/core/ipv4/icmp.c
-    ${LWIP_PATH}/src/core/ipv4/ip4.c
-    ${LWIP_PATH}/src/core/ipv4/ip4_addr.c
-    ${LWIP_PATH}/src/core/ipv4/ip4_frag.c
-#    ${LWIP_PATH}/src/core/ipv6/ip6.c
-#    ${LWIP_PATH}/src/core/ipv6/nd6.c
-#    ${LWIP_PATH}/src/core/ipv6/icmp6.c
-#    ${LWIP_PATH}/src/core/ipv6/ip6_addr.c
-#    ${LWIP_PATH}/src/core/ipv6/ip6_frag.c
-    ${LWIP_PATH}/src/api/api_lib.c
-    ${LWIP_PATH}/src/api/api_msg.c
-    ${LWIP_PATH}/src/api/err.c
-    ${LWIP_PATH}/src/api/netdb.c
-    ${LWIP_PATH}/src/api/tcpip.c
+set(lwipcore_SRCS
+        ${LWIP_DIR}/src/core/def.c
+        ${LWIP_DIR}/src/core/dns.c
+        ${LWIP_DIR}/src/core/inet_chksum.c
+        ${LWIP_DIR}/src/core/init.c
+        ${LWIP_DIR}/src/core/mem.c
+        ${LWIP_DIR}/src/core/memp.c
+        ${LWIP_DIR}/src/core/netif.c
+        ${LWIP_DIR}/src/core/pbuf.c
+        ${LWIP_DIR}/src/core/stats.c
+        ${LWIP_DIR}/src/core/sys.c
+        ${LWIP_DIR}/src/core/tcp.c
+        ${LWIP_DIR}/src/core/tcp_in.c
+        ${LWIP_DIR}/src/core/tcp_out.c
+        ${LWIP_DIR}/src/core/timers.c
+        ${LWIP_DIR}/src/core/udp.c
+)
+set(lwipcore4_SRCS
+        ${LWIP_DIR}/src/core/ipv4/icmp.c
+        ${LWIP_DIR}/src/core/ipv4/ip4.c
+        ${LWIP_DIR}/src/core/ipv4/ip4_addr.c
+        ${LWIP_DIR}/src/core/ipv4/ip_frag.c
+)
+set(lwipapi_SRCS
+        ${LWIP_DIR}/src/api/api_lib.c
+        ${LWIP_DIR}/src/api/api_msg.c
+        ${LWIP_DIR}/src/api/err.c
+        ${LWIP_DIR}/src/api/netdb.c
+        ${LWIP_DIR}/src/api/tcpip.c
 )
 
 set(CONTRIB_SOURCES
-    ${CONTRIB_PATH}/ports/unix/port/perf.c
-    ${CONTRIB_PATH}/ports/unix/port/sys_arch.c
-    ${CONTRIB_PATH}/ports/unix/port/netif/list.c
+        ${CONTRIB_PATH}/ports/unix/lwip_chksum.c
+        ${CONTRIB_PATH}/ports/unix/perf.c
+        ${CONTRIB_PATH}/ports/unix/sys_arch.c
+        ${CONTRIB_PATH}/ports/unix/netif/list.c
+        ${CONTRIB_PATH}/ports/unix/netif/tcpdump.c
 )
 add_library (lwip STATIC
-        ${LWIP_SOURCES}
+        ${lwipcore_SRCS} ${lwipcore4_SRCS} ${lwipapi_SRCS}
         ${CONTRIB_SOURCES} )
