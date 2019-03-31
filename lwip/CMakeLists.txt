@@ -4,7 +4,9 @@ project (lwip)
 set(LWIP_PATH "lwip-2.1.2")
 set(CONTRIB_PATH "contrib-2.1.0")
 
-
+list(APPEND uv_cflags -fvisibility=hidden --std=gnu89)
+list(APPEND uv_cflags -Wall -Wextra -Wstrict-prototypes)
+list(APPEND uv_cflags -Wno-unused-parameter)
 
 include_directories(
     ${LWIP_PATH}/src/include 
@@ -28,3 +30,4 @@ add_library (lwip STATIC
         ${LWIP_SOURCES}
        )
 
+target_compile_options(lwip PRIVATE ${uv_cflags})

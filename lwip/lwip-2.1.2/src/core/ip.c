@@ -58,4 +58,4 @@
 
 struct Custom custom;
 
-int a;
+//int a;

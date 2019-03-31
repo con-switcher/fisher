@@ -5,12 +5,12 @@ include_directories(
         out/lwip/include
 )
 link_directories(
-        out/lwip/
+        ${CMAKE_CURRENT_SOURCE_DIR}/out/lwip/
 )
 
 # lwip文件
 set(LWIP_SOURCES
-        src/lwip.cpp
+        src/lwip.c
 )
 
 add_executable(lwip-bin ${LWIP_SOURCES})
