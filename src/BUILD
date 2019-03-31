@@ -14,7 +14,7 @@ cc_binary(
     ],
 )
 cc_binary(
-    name = "lwip",
+    name = "lwip-bin",
     srcs = [
         "lwip.cpp",
     ],

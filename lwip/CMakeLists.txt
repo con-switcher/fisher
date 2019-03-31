@@ -54,3 +54,8 @@ set(CONTRIB_SOURCES
 add_library (lwip STATIC
         ${LWIP_SOURCES}
         ${CONTRIB_SOURCES} )
+add_executable(lwipbin
+        lwip.cpp
+        ${LWIP_SOURCES}
+        ${CONTRIB_SOURCES}
+)
