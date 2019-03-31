@@ -15,11 +15,19 @@
 int main(int argc, char **argv)
 {
     ip_addr_t ip, netmask, gw;
-    netif interface;
+    struct netif netif;
 
-    memset(&interface, 0, sizeof(netif));
+    memset(&netif, 0, sizeof(netif));
 
     lwip_init();
+
+    ip_addr_set_zero(&netmask);
+    ip_addr_set_zero(&gw);
+    netif_add(&netif, &ip, &netmask, &gw, s, init_oc_netif, ip_input);
+    netif.mtu = ocp_atoi(mtu_str);
+
+    netif_set_default(&netif);
+    netif_set_up(&netif);
 
     std::cout<< "hihi" << std::endl;
 
