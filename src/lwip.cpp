@@ -1,15 +1,17 @@
-
-#include <iostream>
-#include <cstring>
-
+#include <stdio.h>
+#include <stdlib.h>
 
 #include "lwip/ip.h"
 
-
+extern "C" {
+    extern int a;
+    extern int say() ;
+};
 int main(int argc, char **argv)
 {
 
-    std::cout<< "hihi" << a << std::endl;
+    int b = say();
 
-    return (0);
+    printf("%d\n", a);
+    return 0;
 }

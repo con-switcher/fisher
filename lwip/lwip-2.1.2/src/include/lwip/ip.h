@@ -6,7 +6,6 @@ struct Custom {
     int a;
 };
 extern struct Custom custom;
-  int a;
 
 #endif
 

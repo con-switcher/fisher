@@ -58,4 +58,8 @@
 
 struct Custom custom;
 
-//int a;
+int a;
+
+int say() {
+    return  1;
+}
