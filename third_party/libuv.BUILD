@@ -1,9 +1,9 @@
 package(default_visibility = ["//visibility:public"])
 
 cc_library(
-    name = "libuv-lib",
+    name = "libuv",
     srcs = [
-        "out/libuv_a.a",
+        "libuv.dylib",
     ],
     hdrs = glob([
         "include/**/*.h",

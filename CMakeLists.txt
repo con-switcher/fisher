@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 project(lwip-bin)
-
+set (CMAKE_CXX_STANDARD 11)
 include_directories(
         out/lwip/include
 )

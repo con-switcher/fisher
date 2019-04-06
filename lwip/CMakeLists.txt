@@ -51,11 +51,7 @@ set(CONTRIB_SOURCES
     ${CONTRIB_PATH}/ports/unix/port/sys_arch.c
     ${CONTRIB_PATH}/ports/unix/port/netif/list.c
 )
-add_library (lwip STATIC
+add_library (lwip SHARED
         ${LWIP_SOURCES}
         ${CONTRIB_SOURCES} )
-add_executable(lwipbin
-        lwip.cpp
-        ${LWIP_SOURCES}
-        ${CONTRIB_SOURCES}
-)
+

@@ -10,8 +10,6 @@ cc_library(
     hdrs = glob([
         "include/**/*.h",
     ]),
+    srcs = ["liblwip.dylib"],
     strip_include_prefix= "include",
-    deps = [
-        ":lwip-lib" ,
-    ],
 )
