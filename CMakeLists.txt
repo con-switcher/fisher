@@ -10,7 +10,7 @@ link_directories(
 
 # lwip文件
 set(LWIP_SOURCES
-        src/lwip.cpp
+        src/main.cpp
 )
 
 add_executable(lwip-bin ${LWIP_SOURCES})
