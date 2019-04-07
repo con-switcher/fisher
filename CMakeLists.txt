@@ -3,10 +3,9 @@ project(lwip-bin)
 set (CMAKE_CXX_STANDARD 11)
 include_directories(
         out/lwip/include
+        out/libuv/include
 )
-link_directories(
-        out/lwip/
-)
+
 
 # lwip文件
 set(LWIP_SOURCES
@@ -14,6 +13,5 @@ set(LWIP_SOURCES
 )
 
 add_executable(lwip-bin ${LWIP_SOURCES})
-target_link_libraries(lwip-bin lwip pthread)
 
 
